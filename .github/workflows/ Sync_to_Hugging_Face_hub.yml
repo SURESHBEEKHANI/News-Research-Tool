@@ -1,6 +1,6 @@
-name: Sync to Hugging Face hub
-on:
-  push:
+name: Check file size
+on:               # or directly `on: [push]` to run the action on every push on any branch
+  pull_request:
     branches: [main]
 
   # to run this workflow manually from the Actions tab
@@ -10,13 +10,7 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Check large files
+        uses: ActionsDesk/lfs-warning@v2.0
         with:
-          fetch-depth: 0
-          lfs: true
-      - name: Push to hub
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        run: git push --force https://SURESHBEEKHANI:$HF_TOKEN@huggingface.co/spaces/SURESHBEEKHANI/News-Research-Tool main
+          filesizelimit: 10485760 # this is 10MB so we can sync to HF Spaces
