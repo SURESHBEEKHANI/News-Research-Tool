@@ -3,7 +3,7 @@ title: "News Research Tool"                # Display title for the Space
 emoji: "📰"                                 # Space emoji (emoji-only character allowed)
 colorFrom: "blue"                           # Color for Thumbnail gradient
 colorTo: "green"                            # Color for Thumbnail gradient
-sdk: streamlit :"0.89.0"                           # SDK being used (gradio, streamlit, docker, or static)
+sdk: streamlit               # SDK being used (gradio, streamlit, docker, or static)
 sdk_version: " 1.38.0"                       # Specify the version of the selected SDK
 app_file: "app/app.py"                      # Path to your main application file
 pinned: false                                # Whether the Space stays on top of your profile
