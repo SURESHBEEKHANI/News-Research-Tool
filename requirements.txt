@@ -6,3 +6,4 @@ langchain_community
 faiss-cpu
 python-dotenv
 bs4
+transformers
