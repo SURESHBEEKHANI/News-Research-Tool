@@ -16,6 +16,7 @@ logging.basicConfig(level=logging.INFO)  # We set up logging to show important m
 # Load environment variables from the .env file
 load_dotenv()  # This loads secret information, like API keys, from a special file called .env.
 api_key = os.getenv("GROQ_API_KEY")  # We get the secret key we need to use the ChatGroq model.
+api_key_google = os.getenv("GOOGLE_API_KEY") 
 
 # Initialize the ChatGroq model
 def initialize_model(api_key: str) -> ChatGroq:
@@ -114,7 +115,7 @@ def main() -> None:
         try:
             if os.path.exists(index_path):  # Check if our saved index exists.
                 with st.spinner("Loading the FAISS index... 🗂️"):  # Show a loading message.
-                    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")  # Set up embeddings again.
+                    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001",api_key=api_key_google)  # Set up embeddings again.
                     vectorstore = FAISS.load_local(index_path, embeddings, allow_dangerous_deserialization=True)  # Load our saved index.
 
                 with st.spinner("Retrieving answer... 🤖💡"):  # Show a loading message.
