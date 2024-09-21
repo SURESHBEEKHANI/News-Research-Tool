@@ -4,7 +4,7 @@ emoji: "📰"                                 # Space emoji (emoji-only characte
 colorFrom: "blue"                           # Color for Thumbnail gradient
 colorTo: "green"                            # Color for Thumbnail gradient
 sdk: "streamlit"                            # SDK being used (gradio, streamlit, docker, or static)
-sdk_version: "0.84.0"                       # Specify the version of the selected SDK
+sdk_version: " 1.38.0"                       # Specify the version of the selected SDK
 app_file: "app/app.py"                      # Path to your main application file
 pinned: false                                # Whether the Space stays on top of your profile
 ---
