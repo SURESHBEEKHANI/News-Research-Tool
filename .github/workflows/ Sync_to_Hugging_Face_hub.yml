@@ -14,10 +14,27 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-      
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'  # Specify the desired Python version
+
+      - name: Install dependencies
+        run: |
+          pip install huggingface_hub  # Install the required package
+
       - name: Push to Hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        run: git push https://huggingface.co/spaces/SURESHBEEKHANI/News-Research-Tool
+        run: |
+          python -c "
+          from huggingface_hub import HfApi
+          api = HfApi()
+          api.upload_folder(
+              folder_path='.',  # Specify your folder path
+              repo_id='SURESHBEEKHANI/News-Research-Tool',
+              token='${{ secrets.HF_TOKEN }}'
+          )"
