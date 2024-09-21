@@ -19,4 +19,4 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GOOGLE_API_KEY: ${{ secrets.${{ secrets.GOOGLE_API_KEY }}
-        run: git push https://huggingface.co/spaces/SURESHBEEKHANI/NewsResearchTool
+        run: git push  https://huggingface.co/spaces/SURESHBEEKHANI/News-Research-Tool
