@@ -1,6 +1,6 @@
 # Import necessary libraries
 import os  # This library helps us work with files and folders on the computer.
-import streamlit as st  # This library helps us create a web app easily.
+import streamlit as st  # This library helps us create a web app easily..
 from dotenv import load_dotenv  # This library loads secret information from a special file.
 from langchain.chains import RetrievalQAWithSourcesChain  # This helps us answer questions and show where the answers come from.
 from langchain.text_splitter import RecursiveCharacterTextSplitter  # This helps us break long texts into smaller parts.
