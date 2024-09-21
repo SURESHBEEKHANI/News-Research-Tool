@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3.3.0  # Use a version that supports Node.js 20
+        uses: actions/checkout@v4  # Use a version that supports Node.js 20
         with:
           fetch-depth: 0
           lfs: true
